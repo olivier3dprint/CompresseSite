@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Compresse</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<style>
+  :root {
+    --fond: #0a1020;
+    --texte: #eaf0fb;
+    --texte-att: #a3b1cc;
+    --accent: #5ea2ff;
+    --accent-2: #ffb938;
+    --bordure: #24314f;
+    --panneau: #121b31;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--texte);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 24px 96px;
+  }
+
+  html:not([data-lang="en"]) .txt-en { display: none; }
+  html[data-lang="en"] .txt-fr { display: none; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+  }
+  nav a {
+    color: var(--texte-att);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  nav a:hover { color: var(--accent); }
+  #bouton-langue {
+    background: var(--panneau);
+    border: 1px solid var(--bordure);
+    color: var(--texte);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #bouton-langue:hover { border-color: var(--accent); }
+
+  header { margin: 24px 0 40px; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .badge img {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+  .badge span {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--texte-att);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+  h1 { font-size: 1.9rem; margin: 0 0 8px; }
+  .maj { color: var(--texte-att); font-size: 0.9rem; margin: 0; }
+  h2 {
+    font-size: 1.15rem;
+    color: var(--accent);
+    margin: 40px 0 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bordure);
+  }
+  p { margin: 0 0 14px; color: var(--texte); }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  strong { color: #fff; }
+  .contact {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 10px 16px;
+    background: var(--panneau);
+    border: 1px solid var(--bordure);
+    border-radius: 8px;
+  }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bordure);
+    color: var(--texte-att);
+    font-size: 0.85rem;
+  }
+  @media (max-width: 600px) {
+    main { padding: 16px 16px 72px; }
+    h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav>
+    <a href="index.html"><span class="txt-fr">&larr; Accueil</span><span class="txt-en">&larr; Home</span></a>
+    <button id="bouton-langue" type="button">LANGUAGE: ENGLISH</button>
+  </nav>
+
+  <header>
+    <div class="badge"><img src="img/icone.png" alt=""><span>Compresse</span></div>
+    <h1 class="txt-fr">Politique de confidentialité</h1>
+    <h1 class="txt-en">Privacy Policy</h1>
+    <p class="maj txt-fr">Dernière mise à jour : 8 octobre 2026</p>
+    <p class="maj txt-en">Last updated: October 8, 2026</p>
+  </header>
+
+  <p class="txt-fr">Compresse est une application développée par Olivier Popiers qui
+  compresse vos vidéos et vos photos directement sur votre téléphone. Cette politique
+  explique quelles données l'application traite, pourquoi, et comment exercer vos
+  droits.</p>
+  <p class="txt-en">Compresse is an app developed by Olivier Popiers that compresses
+  your videos and photos directly on your phone. This policy explains what data the
+  app processes, why, and how to exercise your rights.</p>
+
+  <h2 class="txt-fr">Vos photos et vidéos</h2>
+  <h2 class="txt-en">Your photos and videos</h2>
+
+  <p class="txt-fr"><strong>Elles restent sur votre appareil.</strong> L'application
+  n'accède qu'aux fichiers que vous choisissez vous-même dans le sélecteur du système.
+  La compression est faite entièrement sur le téléphone : vos fichiers ne sont jamais
+  envoyés à un serveur, ni au développeur, ni à un tiers. Les résultats sont enregistrés
+  dans le dossier « Compresse » de votre galerie ; vos originaux ne sont jamais
+  écrasés.</p>
+  <p class="txt-en"><strong>They stay on your device.</strong> The app only accesses
+  the files you pick yourself in the system picker. Compression runs entirely on the
+  phone: your files are never uploaded to any server, neither the developer's nor a
+  third party's. Results are saved in the "Compresse" folder of your gallery; your
+  originals are never overwritten.</p>
+
+  <p class="txt-fr"><strong>Métadonnées.</strong> Par défaut, les métadonnées des photos
+  (date, appareil, position GPS) ne sont pas recopiées dans le fichier compressé. Vous
+  pouvez choisir de les conserver dans les réglages de l'application.</p>
+  <p class="txt-en"><strong>Metadata.</strong> By default, photo metadata (date,
+  camera, GPS location) is not copied into the compressed file. You can choose to keep
+  it in the app settings.</p>
+
+  <p class="txt-fr"><strong>Historique.</strong> L'historique des compressions (noms et
+  tailles des fichiers) est enregistré uniquement sur votre téléphone. Vous pouvez
+  l'effacer à tout moment depuis l'écran Historique ; il est supprimé à la
+  désinstallation.</p>
+  <p class="txt-en"><strong>History.</strong> The compression history (file names and
+  sizes) is stored on your phone only. You can clear it at any time from the History
+  screen; it is removed when you uninstall the app.</p>
+
+  <h2 class="txt-fr">Publicité</h2>
+  <h2 class="txt-en">Advertising</h2>
+
+  <p class="txt-fr">L'application affiche un bandeau publicitaire Google AdMob pour
+  rester gratuite. AdMob peut utiliser des identifiants (identifiant publicitaire,
+  adresse IP, données techniques de l'appareil) pour diffuser des annonces et en
+  mesurer l'efficacité. Le traitement effectué par Google est décrit dans sa
+  <a href="https://policies.google.com/technologies/partner-sites" target="_blank"
+  rel="noopener">politique de partenariat publicitaire</a>.</p>
+  <p class="txt-en">The app shows one Google AdMob banner to stay free. AdMob may use
+  identifiers (advertising ID, IP address, technical device data) to serve and measure
+  ads. Google's processing is described in its
+  <a href="https://policies.google.com/technologies/partner-sites" target="_blank"
+  rel="noopener">partner sites policy</a>.</p>
+
+  <p class="txt-fr"><strong>Consentement.</strong> Dans l'Espace économique européen,
+  au Royaume-Uni et en Suisse, un formulaire de consentement (Google UMP) s'affiche
+  avant toute publicité personnalisée. Vous pouvez modifier votre choix à tout moment
+  dans les Réglages de l'application, rubrique « Choix de confidentialité des
+  annonces ».</p>
+  <p class="txt-en"><strong>Consent.</strong> In the European Economic Area, the UK and
+  Switzerland, a consent form (Google UMP) is shown before any personalized ad. You can
+  change your choice at any time in the app Settings, under "Ad privacy choices".</p>
+
+  <h2 class="txt-fr">Permissions</h2>
+  <h2 class="txt-en">Permissions</h2>
+  <ul class="txt-fr">
+    <li><strong>Internet</strong> : uniquement pour la publicité.</li>
+    <li><strong>Notifications</strong> (facultatif) : afficher la progression de la
+    compression et sa fin.</li>
+    <li><strong>Service au premier plan</strong> : permettre à la compression de
+    continuer quand vous quittez l'application, avec une notification visible et un
+    bouton Annuler.</li>
+  </ul>
+  <ul class="txt-en">
+    <li><strong>Internet</strong>: for advertising only.</li>
+    <li><strong>Notifications</strong> (optional): show compression progress and
+    completion.</li>
+    <li><strong>Foreground service</strong>: lets compression keep running when you
+    leave the app, with a visible notification and a Cancel button.</li>
+  </ul>
+
+  <h2 class="txt-fr">Ce que l'application ne fait pas</h2>
+  <h2 class="txt-en">What the app does not do</h2>
+  <ul class="txt-fr">
+    <li>Aucun compte à créer, aucune adresse e-mail demandée.</li>
+    <li>Aucun accès à votre galerie entière : seulement aux fichiers que vous
+    sélectionnez.</li>
+    <li>Aucun accès à votre position, vos contacts, votre appareil photo ou votre
+    micro.</li>
+    <li>Aucune donnée vendue à des tiers.</li>
+    <li>Aucun achat en argent réel.</li>
+  </ul>
+  <ul class="txt-en">
+    <li>No account to create, no email address requested.</li>
+    <li>No access to your whole gallery: only to the files you select.</li>
+    <li>No access to your location, contacts, camera or microphone.</li>
+    <li>No data sold to third parties.</li>
+    <li>No real-money purchases.</li>
+  </ul>
+
+  <h2 class="txt-fr">Durée de conservation</h2>
+  <h2 class="txt-en">Retention period</h2>
+  <p class="txt-fr">Aucune donnée n'est conservée par le développeur : l'application
+  n'a pas de serveur. Seul Google (AdMob) peut conserver des données publicitaires selon
+  sa propre politique. Les données locales (historique, réglages) restent sur votre
+  appareil jusqu'à ce que vous les effaciez ou désinstalliez l'application.</p>
+  <p class="txt-en">No data is retained by the developer: the app has no server. Only
+  Google (AdMob) may retain advertising data under its own policy. Local data (history,
+  settings) stays on your device until you clear it or uninstall the app.</p>
+
+  <h2 class="txt-fr">Vos droits</h2>
+  <h2 class="txt-en">Your rights</h2>
+  <p class="txt-fr">Pour les données traitées par AdMob, voir la politique de Google
+  liée ci-dessus. Pour toute autre question, écrivez à l'adresse ci-dessous.</p>
+  <p class="txt-en">For data processed by AdMob, see Google's policy linked above. For
+  any other question, write to the address below.</p>
+
+  <h2 class="txt-fr">Enfants</h2>
+  <h2 class="txt-en">Children</h2>
+  <p class="txt-fr">L'application ne s'adresse pas spécifiquement aux enfants de moins
+  de 13 ans et ne collecte pas sciemment de données auprès d'eux.</p>
+  <p class="txt-en">The app is not specifically directed at children under 13 and does
+  not knowingly collect data from them.</p>
+
+  <h2 class="txt-fr">Modifications</h2>
+  <h2 class="txt-en">Changes</h2>
+  <p class="txt-fr">Toute modification de cette politique sera publiée à cette même
+  adresse, avec une date de mise à jour actualisée.</p>
+  <p class="txt-en">Any change to this policy will be published at this same address,
+  with an updated date.</p>
+
+  <footer>
+    <h2 style="border-top:none;padding-top:0;margin-top:0;">Contact</h2>
+    <span class="contact">olivier3dprint@gmail.com</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var html = document.documentElement;
+  var bouton = document.getElementById('bouton-langue');
+
+  function appliquer(langue) {
+    html.setAttribute('data-lang', langue);
+    html.setAttribute('lang', langue);
+    bouton.textContent = langue === 'en' ? 'LANGUE : FRANÇAIS' : 'LANGUAGE: ENGLISH';
+  }
+
+  appliquer(params.get('lang') === 'en' ? 'en' : 'fr');
+
+  bouton.addEventListener('click', function () {
+    appliquer(html.getAttribute('data-lang') === 'en' ? 'fr' : 'en');
+  });
+})();
+</script>
+</body>
+</html>

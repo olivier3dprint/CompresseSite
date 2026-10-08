@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compresse : vidéos et photos</title>
+<meta name="description" content="Réduisez le poids de vos vidéos et photos, 100 % sur votre téléphone. Pas de compte, pas de filigrane.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<style>
+  :root {
+    --fond: #0a1020;
+    --texte: #eaf0fb;
+    --texte-att: #a3b1cc;
+    --accent: #5ea2ff;
+    --accent-2: #ffb938;
+    --bordure: #24314f;
+    --panneau: #121b31;
+    --panneau-haut: #19243f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--texte);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 24px 96px;
+  }
+  a { color: var(--accent); }
+
+  html:not([data-lang="en"]) .txt-en { display: none; }
+  html[data-lang="en"] .txt-fr { display: none; }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+  }
+  #bouton-langue {
+    background: var(--panneau);
+    border: 1px solid var(--bordure);
+    color: var(--texte);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #bouton-langue:hover { border-color: var(--accent); }
+
+  header.hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    padding: 32px 0 8px;
+  }
+  .icone {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(46, 116, 255, 0.35);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+  h1 .accent { color: var(--accent); }
+  .tagline {
+    font-size: 1.1rem;
+    color: var(--texte-att);
+    max-width: 520px;
+    margin: 0 0 24px;
+  }
+  .chiffres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+  }
+  .chiffres li {
+    background: var(--panneau);
+    border: 1px solid var(--bordure);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    color: var(--texte-att);
+  }
+  .bouton-play {
+    display: inline-block;
+    padding: 14px 34px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: var(--fond);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .bouton-play:hover,
+  .bouton-play:focus-visible {
+    background: var(--accent-2);
+    color: var(--fond);
+    transform: translateY(-1px);
+  }
+
+  /* Captures réelles de l'application (écrans sans publicité), dans un cadre de téléphone. */
+  .telephone {
+    width: 270px;
+    border: 8px solid #26324d;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #26324d;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  }
+  .telephone img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 22px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 72px 0 8px;
+    text-align: center;
+  }
+  .sous-titre {
+    text-align: center;
+    color: var(--texte-att);
+    margin: 0 auto 32px;
+    max-width: 600px;
+  }
+
+  .vitrine {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    justify-items: center;
+  }
+  .vitrine figure { margin: 0; }
+  .vitrine .telephone { width: 100%; max-width: 270px; }
+  .vitrine figcaption {
+    text-align: center;
+    color: var(--texte-att);
+    font-size: 0.9rem;
+    margin-top: 12px;
+    max-width: 270px;
+  }
+  .vitrine figcaption strong { color: var(--texte); display: block; }
+
+  .grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .fonctionnalite {
+    background: var(--panneau);
+    border: 1px solid var(--bordure);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .fonctionnalite .titre {
+    font-weight: 700;
+    color: var(--accent-2);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .fonctionnalite ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--texte-att);
+    font-size: 0.92rem;
+  }
+  .fonctionnalite li { margin-bottom: 4px; }
+
+  .bandeau {
+    margin-top: 72px;
+    text-align: center;
+    padding: 28px 20px;
+    background: var(--panneau);
+    border: 1px solid var(--bordure);
+    border-radius: 14px;
+  }
+  .bandeau p { margin: 0; color: var(--texte-att); }
+  .bandeau strong { color: var(--texte); }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bordure);
+    color: var(--texte-att);
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  footer a { color: var(--texte-att); }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 760px) {
+    main { padding: 16px 16px 72px; }
+    header.hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 32px;
+    }
+    .tagline { margin-left: auto; margin-right: auto; }
+    .chiffres { justify-content: center; }
+    .hero .telephone { margin: 0 auto; width: 230px; }
+    h1 { font-size: 1.9rem; }
+    /* Sur téléphone, les captures défilent horizontalement au lieu de s'empiler. */
+    .vitrine {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding-bottom: 12px;
+      justify-items: initial;
+    }
+    .vitrine figure { flex: 0 0 72%; scroll-snap-align: center; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav>
+    <button id="bouton-langue" type="button">LANGUAGE: ENGLISH</button>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <img class="icone" src="img/icone.png" alt="" width="88" height="88">
+      <h1 class="txt-fr">Vos vidéos et photos, <span class="accent">jusqu'à 80 % plus légères</span></h1>
+      <h1 class="txt-en">Your videos and photos, <span class="accent">up to 80% smaller</span></h1>
+      <p class="tagline txt-fr">Compresse allège vos fichiers en quelques secondes pour les envoyer par messagerie ou par mail, ou pour libérer de l'espace. Tout se passe sur votre téléphone : rien n'est envoyé sur un serveur.</p>
+      <p class="tagline txt-en">Compresse shrinks your files in seconds so you can send them by chat or email, or free up storage. Everything happens on your phone: nothing is uploaded to a server.</p>
+      <ul class="chiffres txt-fr">
+        <li>100 % local</li>
+        <li>Sans compte</li>
+        <li>Sans filigrane</li>
+        <li>Gratuit</li>
+      </ul>
+      <ul class="chiffres txt-en">
+        <li>100% on-device</li>
+        <li>No account</li>
+        <li>No watermark</li>
+        <li>Free</li>
+      </ul>
+      <a class="bouton-play txt-fr" href="https://play.google.com/store/apps/details?id=com.compresse.app" target="_blank" rel="noopener">Télécharger sur Google Play</a>
+      <a class="bouton-play txt-en" href="https://play.google.com/store/apps/details?id=com.compresse.app" target="_blank" rel="noopener">Get it on Google Play</a>
+    </div>
+    <div class="telephone">
+      <img src="img/resultats-videos.webp" width="540" height="1072" alt="Écran Résultats : 429 Mo de vidéos réduits à 69 Mo, soit 83 % de gagné">
+    </div>
+  </header>
+
+  <h2 class="txt-fr">Comment ça marche</h2>
+  <h2 class="txt-en">How it works</h2>
+  <p class="sous-titre txt-fr">Choisissez vos fichiers, réglez si vous le souhaitez, lancez. Captures réalisées sur un Galaxy S20 FE.</p>
+  <p class="sous-titre txt-en">Pick your files, tweak if you like, start. Screenshots taken on a Galaxy S20 FE.</p>
+
+  <div class="vitrine">
+    <figure>
+      <div class="telephone"><img src="img/reglages-video.webp" width="540" height="1072" loading="lazy" alt="Réglages des vidéos avec taille estimée et modes Messagerie, Équilibré, Qualité max, Taille cible"></div>
+      <figcaption class="txt-fr"><strong>1. Choisissez un mode</strong>La taille finale est estimée avant de lancer.</figcaption>
+      <figcaption class="txt-en"><strong>1. Pick a mode</strong>The final size is estimated before you start.</figcaption>
+    </figure>
+    <figure>
+      <div class="telephone"><img src="img/progression.webp" width="540" height="1072" loading="lazy" alt="Compression en cours, fichier 2 sur 3, 49 %"></div>
+      <figcaption class="txt-fr"><strong>2. Laissez faire</strong>La compression continue en arrière-plan, avec une notification.</figcaption>
+      <figcaption class="txt-en"><strong>2. Let it run</strong>Compression keeps going in the background, with a notification.</figcaption>
+    </figure>
+    <figure>
+      <div class="telephone"><img src="img/avant-apres.webp" width="540" height="1072" loading="lazy" alt="Comparatif avant / après d'une photo avec curseur, 2,5 Mo réduits à 780 ko"></div>
+      <figcaption class="txt-fr"><strong>3. Comparez</strong>Curseur avant / après et zoom pour juger la qualité.</figcaption>
+      <figcaption class="txt-en"><strong>3. Compare</strong>Before / after slider and zoom to judge the quality.</figcaption>
+    </figure>
+  </div>
+
+  <h2 class="txt-fr">Tout ce qu'il faut, rien de plus</h2>
+  <h2 class="txt-en">Everything you need, nothing more</h2>
+  <p class="sous-titre txt-fr">Des modes simples pour aller vite, des réglages fins pour ceux qui le veulent.</p>
+  <p class="sous-titre txt-en">Simple modes to go fast, fine controls for those who want them.</p>
+
+  <div class="grille">
+    <div class="fonctionnalite">
+      <div class="titre txt-fr">Vidéos</div>
+      <div class="titre txt-en">Videos</div>
+      <ul class="txt-fr">
+        <li>Modes Messagerie (environ 720p), Équilibré, Qualité max</li>
+        <li>Taille cible : 16 Mo, 25 Mo (mail), 100 Mo ou votre valeur</li>
+        <li>Mode avancé : résolution, débit, images par seconde, H.264 ou HEVC, suppression du son</li>
+      </ul>
+      <ul class="txt-en">
+        <li>Messaging (about 720p), Balanced and Max quality modes</li>
+        <li>Target size: 16 MB, 25 MB (email), 100 MB or your own value</li>
+        <li>Advanced: resolution, bitrate, frame rate, H.264 or HEVC, remove audio</li>
+      </ul>
+    </div>
+    <div class="fonctionnalite">
+      <div class="titre txt-fr">Photos</div>
+      <div class="titre txt-en">Photos</div>
+      <ul class="txt-fr">
+        <li>Sélection multiple, traitement par lot</li>
+        <li>Qualité réglable, redimensionnement ou taille cible</li>
+        <li>Sortie JPEG, WebP ou PNG, conversion HEIC vers JPEG</li>
+      </ul>
+      <ul class="txt-en">
+        <li>Multi-select and batch processing</li>
+        <li>Adjustable quality, resizing or target size</li>
+        <li>JPEG, WebP or PNG output, HEIC to JPEG conversion</li>
+      </ul>
+    </div>
+    <div class="fonctionnalite">
+      <div class="titre txt-fr">Simple et sûr</div>
+      <div class="titre txt-en">Simple and safe</div>
+      <ul class="txt-fr">
+        <li>Vos originaux ne sont jamais écrasés</li>
+        <li>Position GPS retirée des photos par défaut</li>
+        <li>Partage direct vers WhatsApp, mail…</li>
+        <li>Historique et espace total gagné</li>
+      </ul>
+      <ul class="txt-en">
+        <li>Your originals are never overwritten</li>
+        <li>GPS location removed from photos by default</li>
+        <li>Share straight to WhatsApp, email…</li>
+        <li>History and total space saved</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="txt-fr">Aussi pour vos photos</h2>
+  <h2 class="txt-en">For your photos too</h2>
+  <p class="sous-titre txt-fr">Ici, 9 photos de 34 Mo ramenées à 14 Mo avec les réglages par défaut.</p>
+  <p class="sous-titre txt-en">Here, 9 photos weighing 34 MB brought down to 14 MB with the default settings.</p>
+
+  <div class="vitrine">
+    <figure>
+      <div class="telephone"><img src="img/reglages-photo.webp" width="540" height="1072" loading="lazy" alt="Réglages des photos : format de sortie, qualité, redimensionnement"></div>
+      <figcaption class="txt-fr"><strong>Format, qualité, taille</strong>JPEG, WebP ou PNG, qualité de 10 à 100.</figcaption>
+      <figcaption class="txt-en"><strong>Format, quality, size</strong>JPEG, WebP or PNG, quality from 10 to 100.</figcaption>
+    </figure>
+    <figure>
+      <div class="telephone"><img src="img/resultats-photos.webp" width="540" height="1072" loading="lazy" alt="Résultats : 20 Mo économisés sur 9 photos, soit 58 %"></div>
+      <figcaption class="txt-fr"><strong>Le gain, photo par photo</strong>Touchez un fichier pour le comparer.</figcaption>
+      <figcaption class="txt-en"><strong>Savings, photo by photo</strong>Tap a file to compare it.</figcaption>
+    </figure>
+    <figure>
+      <div class="telephone"><img src="img/reglages.webp" width="540" height="1072" loading="lazy" alt="Réglages : dossier de sortie, qualité par défaut, métadonnées, suppression des originaux"></div>
+      <figcaption class="txt-fr"><strong>Vos préférences</strong>Dossier de sortie, qualité par défaut, métadonnées.</figcaption>
+      <figcaption class="txt-en"><strong>Your preferences</strong>Output folder, default quality, metadata.</figcaption>
+    </figure>
+  </div>
+
+  <div class="bandeau">
+    <p class="txt-fr"><strong>Vos fichiers ne quittent jamais votre téléphone.</strong> Pas de compte, pas de filigrane. L'application gratuite est financée par un seul bandeau publicitaire discret, jamais pendant la compression et jamais en plein écran.</p>
+    <p class="txt-en"><strong>Your files never leave your phone.</strong> No account, no watermark. The free app is funded by a single discreet banner ad, never during compression and never full-screen.</p>
+  </div>
+
+  <footer>
+    <p class="txt-fr"><a href="confidentialite.html">Politique de confidentialité</a> · Contact : <a href="mailto:olivier3dprint@gmail.com">olivier3dprint@gmail.com</a></p>
+    <p class="txt-en"><a href="confidentialite.html?lang=en">Privacy Policy</a> · Contact: <a href="mailto:olivier3dprint@gmail.com">olivier3dprint@gmail.com</a></p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var html = document.documentElement;
+  var bouton = document.getElementById('bouton-langue');
+
+  function appliquer(langue) {
+    html.setAttribute('data-lang', langue);
+    html.setAttribute('lang', langue);
+    bouton.textContent = langue === 'en' ? 'LANGUE : FRANÇAIS' : 'LANGUAGE: ENGLISH';
+  }
+
+  appliquer(params.get('lang') === 'en' ? 'en' : 'fr');
+
+  bouton.addEventListener('click', function () {
+    appliquer(html.getAttribute('data-lang') === 'en' ? 'fr' : 'en');
+  });
+})();
+</script>
+</body>
+</html>
